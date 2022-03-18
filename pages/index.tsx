@@ -14,15 +14,16 @@ export default function Index() {
       <Box sx={{ my: 4, display: 'flex',
             flexDirection: 'column',
             alignItems: 'center' }}>
-        <IconButton component={Link} href="/contact" sx={{ mb: 4 }} disableRipple>
+        <IconButton component={Link} href="/contact" sx={{ mb: 4 }}>
           <Avatar
             alt="Юлія Бойко"
-            src="/static/img/profile2x.jpg"
+            src="/cover.jpg"
             sx={{ 
               width: "20rem", height: "20rem",
               border: "4px solid #eee",
-              transition: "border-color 0.5s",
-              ":hover": { borderColor: "primary.main" }
+              borderColor: "primary.main"
+              // transition: "border-color 0.5s",
+              // ":hover": { borderColor: "primary.main" }
             }}
           />
         </IconButton>

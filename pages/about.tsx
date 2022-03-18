@@ -44,8 +44,12 @@ export default function About() {
           <Grid item xs={12} sm={3} md={3}>
             <Avatar
               alt="Юлія Бойко"
-              src="/static/img/profile2x.jpg"
-              sx={{ width: "15rem", height: "15rem" }}
+              src="/cover.jpg"
+              sx={{ 
+                width: "15rem", height: "15rem",
+                border: "4px solid #eee",
+                borderColor: "primary.main"
+              }}
             />
           </Grid>
         </Grid>

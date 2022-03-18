@@ -93,7 +93,7 @@ export default function MyApp(props: MyAppProps) {
         <meta property="og:url" content="https://boikodoc.com/" />
         <meta property="og:site_name" content={process.env.baseTitle} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://boikodoc.com/cover.png" />
+        <meta property="og:image" content="https://boikodoc.com/cover.jpg" />
       </Head>
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={getTheme(state.themeMode)}>
