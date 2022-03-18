@@ -1,0 +1,38 @@
+{
+  "name": "boikodoc",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
+    "export": "next build && next export",
+    "deploy": "push-dir --dir=out --branch=gh-pages --cleanup",
+    "export-and-deploy": "npm run export && npm run deploy"
+  },
+  "dependencies": {
+    "@emotion/cache": "latest",
+    "@emotion/react": "latest",
+    "@emotion/server": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "latest",
+    "@mui/lab": "latest",
+    "@mui/material": "latest",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-gtm-module": "^2.0.11",
+    "react-icons": "^4.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-gtm-module": "^2.0.1",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "push-dir": "latest",
+    "typescript": "latest"
+  }
+}
