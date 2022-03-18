@@ -41,7 +41,7 @@ export default function About() {
             </Typography>
             <Typography sx={{ mb: 2 }}>
               <SvgIcon sx={{ mr: 1, verticalAlign: 'middle' }}><ViberIcon /></SvgIcon>
-              Viber: <Link href="viber://chat?number=+380502076704" target="__blank">+380 50 207 67 04</Link>
+              Viber: <Link href="viber://chat?number=%2B380502076704" target="__blank">+380 50 207 67 04</Link>
             </Typography>
             <Typography sx={{ mb: 2 }}>
               <SvgIcon sx={{ mr: 1, verticalAlign: 'middle' }}><FacebookMessengerIcon /></SvgIcon>
@@ -53,7 +53,7 @@ export default function About() {
             </Typography>
             <Typography sx={{ mb: 2 }}>
               <PhoneIcon htmlColor='#2baba8' sx={{ mr: 1, verticalAlign: 'middle' }} />
-              Телефон: <Link href="tel://+380502076704" target="__blank">+380 50 207 67 04</Link>
+              Телефон: <Link href="tel://%2B380502076704" target="__blank">+380 50 207 67 04</Link>
             </Typography>
           </Grid>
 
