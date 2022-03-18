@@ -110,6 +110,7 @@ export default function MyApp(props: MyAppProps) {
               anchor="left"
               open={state.open}
               onClose={toggleDrawer(false)}
+              sx={{ zIndex: 20 }}
             >
               <Box
                 sx={{ width: 250 }}
@@ -130,7 +131,7 @@ export default function MyApp(props: MyAppProps) {
               </Box>
             </Drawer>
             <Box sx={{ backgroundColor: 'primary.light', height: "0.3rem" }}></Box>
-            <AppBar position="static" color="transparent" elevation={0} enableColorOnDark>
+            <AppBar position="static" color="transparent" elevation={0} enableColorOnDark sx={{ zIndex: 20 }}>
               <Container>
                 <Toolbar variant="dense" disableGutters>
                 {/* <Stack direction="row" spacing={0} sx={{ mt: 1, mb: 1 }}> */}

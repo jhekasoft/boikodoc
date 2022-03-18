@@ -29,10 +29,25 @@ export async function getStaticProps(): Promise<StaticProps> {
 }
 
 export default function Index(props: StaticPropsProps) {
+  React.useEffect(() => {
+    const cover = document.getElementById('main_cover');
+    if (cover) {
+      document.addEventListener('scroll', () => {
+          const
+              pageY = window.pageYOffset,
+              scroll = pageY * 0.3,
+              scrolled = scroll.toFixed(0);
+          if (pageY <= document.documentElement.clientHeight && pageY <= 1080) {
+              cover.style.transform = 'translateY(' + (scrolled) + 'px)';
+          }
+      });
+    }
+  }, []);
+
   return (
     <>
-    <section style={{ height: '100vh', width: '100%', position: 'relative', minHeight: 670, overflow: 'hidden' }}>
-      <Container sx={{ position: 'absolute', left: 0, right: 0, zIndex: 1, top: '50%', transform: 'translate(0,-50%)' }}>
+    <section style={{ top: '-48px', height: '100vh', width: '100%', position: 'relative', minHeight: 670, overflow: 'hidden' }}>
+      <Container sx={{ position: 'absolute', pt: '48px', left: 0, right: 0, zIndex: 1, top: '50%', transform: 'translate(0,-50%)' }}>
         <Box sx={{ my: 4, display: 'flex',
               flexDirection: 'column',
               alignItems: 'center' }}>
@@ -64,7 +79,7 @@ export default function Index(props: StaticPropsProps) {
           </Button>
         </Box>
       </Container>
-      <div style={{ bottom: 0, margin: 'auto', top: 0, position: 'absolute', left: 0, right: 0, willChange: 'transform', background: 'url(/static/img/about_bg6.jpg) no-repeat top center', backgroundSize: 'cover' }}>
+      <div id="main_cover" style={{ bottom: 0, margin: 'auto', top: 0, position: 'absolute', left: 0, right: 0, willChange: 'transform', background: 'url(/static/img/about_bg6.jpg) no-repeat top center', backgroundSize: 'cover' }}>
     </div>
     </section>
 
