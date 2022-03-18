@@ -26,11 +26,11 @@ export default function Index() {
             }}
           />
         </IconButton>
-        <Typography variant="h5" sx={{ mb: 4 }}>
+        <Typography variant="h5" sx={{ mb: 4, textAlign: 'center' }}>
           <strong>Бойко Юлія Миколаївна</strong> — лікар акушер-гінеколог, лікар УЗД (Київ).
         </Typography>
 
-        <Typography variant="h5" sx={{ mb: 2 }}>Більше 10 років досвіду.</Typography>
+        <Typography variant="h5" sx={{ mb: 2, textAlign: 'center' }}>Більше 10 років досвіду.</Typography>
       </Box>
     </Container>
     <div style={{ bottom: 0, margin: 'auto', top: 0, position: 'absolute', left: 0, right: 0, willChange: 'transform', background: 'url(/static/img/about_bg6.jpg) no-repeat top center', backgroundSize: 'cover' }}>
