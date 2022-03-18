@@ -89,26 +89,45 @@ export default function Index(props: StaticPropsProps) {
           Освіта та досвід роботи
         </Typography>
 
-        <Timeline position="alternate">
-            { props.timelineItems.map((item, i) => (
-              <TimelineItem key={i}>
-                <TimelineOppositeContent>
+        <Timeline position="right" sx={{ display: { xs: 'block', md: 'none' } }}>
+          { props.timelineItems.map((item, i) => (
+            <TimelineItem key={i} sx={{ '&&::before': { content: 'none' } }}>
+              <TimelineSeparator>
+                <TimelineDot color="primary" />
+                <TimelineConnector />
+              </TimelineSeparator>
+              <TimelineContent>
+                <Paper elevation={3} sx={{ px: 1, py: 1 }}>
                   <Typography variant="body2" color="textSecondary">
                     {item.title_uk}
                   </Typography>
-                </TimelineOppositeContent>
-                <TimelineSeparator>
-                  <TimelineDot color="primary" />
-                  <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent>
-                  <Paper elevation={3} sx={{ px: 1, py: 1 }}>
-                    <Typography>{item.desc_uk}</Typography>
-                  </Paper>
-                </TimelineContent>
-              </TimelineItem>
-            )) }
-          </Timeline>
+                  <Typography>{item.desc_uk}</Typography>
+                </Paper>
+              </TimelineContent>
+            </TimelineItem>
+          )) }
+        </Timeline>
+
+        <Timeline position="alternate" sx={{ display: { xs: 'none', md: 'block' } }}>
+          { props.timelineItems.map((item, i) => (
+            <TimelineItem key={i}>
+              <TimelineOppositeContent>
+                <Typography variant="body2" color="textSecondary">
+                  {item.title_uk}
+                </Typography>
+              </TimelineOppositeContent>
+              <TimelineSeparator>
+                <TimelineDot color="primary" />
+                <TimelineConnector />
+              </TimelineSeparator>
+              <TimelineContent>
+                <Paper elevation={3} sx={{ px: 1, py: 1 }}>
+                  <Typography>{item.desc_uk}</Typography>
+                </Paper>
+              </TimelineContent>
+            </TimelineItem>
+          )) }
+        </Timeline>
       </Box>
     </Container>
     </>
