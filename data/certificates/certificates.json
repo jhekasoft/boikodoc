@@ -1,0 +1,72 @@
+[
+  {
+    "img": "/frontend/dist/img/certificates/thumbnails/10.jpg",
+    "img2x": "/frontend/dist/img/certificates/thumbnails2x/10.jpg",
+    "img_full": "/frontend/dist/img/certificates/10.jpg",
+    "title_uk": "Сертифікат «Сучасні підходи в онкогінекології: від діагностики до лікування». Бойко Юлія Миколаївна, Київ",
+    "title_ru": "Сертификат «Современные подходы в онкогинекологии: от диагностики до лечения», УЗИ Бойко Юлия Николаевна, Киев"
+  },
+  {
+    "img": "/frontend/dist/img/certificates/thumbnails/09.jpg",
+    "img2x": "/frontend/dist/img/certificates/thumbnails2x/09.jpg",
+    "img_full": "/frontend/dist/img/certificates/09.jpg",
+    "title_uk": "Сертифікат «Ультразвук в акушерстві гінекологіі» Бойко Юлія Миколаївна, Київ",
+    "title_ru": "Сертификат «Ультразвук в акушерстве и гинекологии» Бойко Юлия Николаевна, Киев"
+  },
+  {
+    "img": "/frontend/dist/img/certificates/thumbnails/08.jpg",
+    "img2x": "/frontend/dist/img/certificates/thumbnails2x/08.jpg",
+    "img_full": "/frontend/dist/img/certificates/08.jpg",
+    "title_uk": "Сертифікат «Репродуктивна ендокринологія» Бойко Юлія Миколаївна, Київ",
+    "title_ru": "Сертификат «Репродуктивная эндокринология» Бойко Юлия Николаевна, Киев"
+  },
+  {
+    "img": "/frontend/dist/img/certificates/thumbnails/07.jpg",
+    "img2x": "/frontend/dist/img/certificates/thumbnails2x/07.jpg",
+    "img_full": "/frontend/dist/img/certificates/07.jpg",
+    "title_uk": "Сертифікат «Базові практичні навички лапароскопічної хірургії молого тазу для гінекологів» Бойко Юлія Миколаївна, Київ",
+    "title_ru": "Сертификат «Базовые практические навыки лапароскопической хирургии молого таза для гинекологов» Бойко Юлия Николаевна, Киев"
+  },
+  {
+    "img": "/frontend/dist/img/certificates/thumbnails/06.jpg",
+    "img2x": "/frontend/dist/img/certificates/thumbnails2x/06.jpg",
+    "img_full": "/frontend/dist/img/certificates/06.jpg",
+    "title_uk": "Сертифікат «Synevo Day: 10 років здоров'я в цифрах» Бойко Юлія Миколаївна, Київ",
+    "title_ru": "Сертификат «Synevo Day 10 лет здоровья в цифрах» Бойко Юлия Николаевна, Киев"
+  },
+  {
+    "img": "/frontend/dist/img/certificates/thumbnails/05.jpg",
+    "img2x": "/frontend/dist/img/certificates/thumbnails2x/05.jpg",
+    "img_full": "/frontend/dist/img/certificates/05.jpg",
+    "title_uk": "Сертифікат «Проблеми тазового дна» Бойко Юлія Миколаївна, Київ",
+    "title_ru": "Сертификат «Проблемы тазового дна», УЗИ Бойко Юлия Николаевна, Киев"
+  },
+  {
+    "img": "/frontend/dist/img/certificates/thumbnails/04.jpg",
+    "img2x": "/frontend/dist/img/certificates/thumbnails2x/04.jpg",
+    "img_full": "/frontend/dist/img/certificates/04.jpg",
+    "title_uk": "Сертифікат «Патологія шийки матки: від діагностики і тактики ведення до контролю ефективності лікування» Бойко Юлія Миколаївна, Київ",
+    "title_ru": "Сертификат «Патология шейки матки от диагностики и тактики ведения до контроля эффективности лечения» Бойко Юлия Николаевна, Киев"
+  },
+  {
+    "img": "/frontend/dist/img/certificates/thumbnails/03.jpg",
+    "img2x": "/frontend/dist/img/certificates/thumbnails2x/03.jpg",
+    "img_full": "/frontend/dist/img/certificates/03.jpg",
+    "title_uk": "Сертифікат «Оптимізація терапії захворювань в акушерсько-гінекологічній практиці біорегуляційними препаратами Хеель» Бойко Юлія Миколаївна, Київ",
+    "title_ru": "Сертификат «Оптимизация терапии заболеваний в акушерско-гинекологической практике биорегуляционными препаратами Хеель» Бойко Юлия Николаевна, Киев"
+  },
+  {
+    "img": "/frontend/dist/img/certificates/thumbnails/02.jpg",
+    "img2x": "/frontend/dist/img/certificates/thumbnails2x/02.jpg",
+    "img_full": "/frontend/dist/img/certificates/02.jpg",
+    "title_uk": "Сертифікат «Науково-практичний форум IFRM» Бойко Юлія Миколаївна, Київ",
+    "title_ru": "Сертификат «Научно-практический форум IFRM» Бойко Юлия Николаевна, Киев"
+  },
+  {
+    "img": "/frontend/dist/img/certificates/thumbnails/01.jpg",
+    "img2x": "/frontend/dist/img/certificates/thumbnails2x/01.jpg",
+    "img_full": "/frontend/dist/img/certificates/01.jpg",
+    "title_uk": "Сертифікат «Вибрані питання ультразвукової діагностики в мамології та гінекології» Бойко Юлія Миколаївна, Київ",
+    "title_ru": "Сертификат «Избранные вопросы ультразвуковой диагностики в маммологии и гинекологии» Бойко Юлия Николаевна, Киев"
+  }
+]

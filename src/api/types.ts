@@ -5,4 +5,10 @@ export interface TimelineItem {
   desc_ru: string;
 }
 
-
+export interface Review {
+  name_uk: string;
+  name_ru: string;
+  text_uk: string;
+  text_ru: string;
+  rating: number;
+}

@@ -3,15 +3,18 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
-import { Button, IconButton, Paper } from '@mui/material';
+import { Button, Grid, IconButton, Paper, Rating, Stack } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import Link from '../src/Link';
-import { TimelineItem as TimelineItm } from '../src/api/types';
-import { fetchTimeline } from '../src/api';
+import { Review, TimelineItem as TimelineItm } from '../src/api/types';
+import { fetchReviews, fetchTimeline } from '../src/api';
 import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from '@mui/lab';
+import Carousel from 'react-material-ui-carousel';
 
 interface StaticPropsProps {
   timelineItems: TimelineItm[];
+  reviews: Review[];
 }
 
 interface StaticProps {
@@ -19,11 +22,13 @@ interface StaticProps {
 }
 
 export async function getStaticProps(): Promise<StaticProps> {
-  const data = fetchTimeline();
+  const timelineItems = fetchTimeline();
+  const reviews = fetchReviews();
 
   return {
     props: {
-      timelineItems: data,
+      timelineItems,
+      reviews
     },
   }
 }
@@ -128,6 +133,57 @@ export default function Index(props: StaticPropsProps) {
             </TimelineItem>
           )) }
         </Timeline>
+      </Box>
+
+      <Box id="reviews">
+        <Typography variant="h4" sx={{ textAlign: 'center' }}>
+          Відгуки
+        </Typography>
+        <Grid container spacing={0} alignItems="center" justifyContent="center">
+          <Grid item xs={12} sm={12} md={9}>
+            <Carousel
+              autoPlay={true}
+              stopAutoPlayOnHover={true}
+              indicators={true}
+              swipe={true}
+              cycleNavigation={true}
+              navButtonsAlwaysVisible={false}
+              fullHeightHover={false}
+              animation="slide"
+              interval={5000}
+              // duration={1000}
+              activeIndicatorIconButtonProps={{
+                style: {
+                  color: "#2baba8"
+                }
+              }}
+            >
+              { props.reviews.map((item, i) => (
+                <Box key={i} sx={{ minHeight: { xs: '17rem', sm: '10rem' } }}>
+                  <Stack
+                    direction="row"
+                    justifyContent="space-between"
+                    alignItems="center"
+                    spacing={2}
+                  >
+                    <Typography variant="h5">{item.name_uk}</Typography>
+                    <Box sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                    }}>
+                      <Rating value={item.rating} precision={0.5} readOnly />
+                      <Box>{item.rating}</Box>
+                    </Box>
+                  </Stack>
+                  <Typography variant="h5" sx={{ fontFamily: 'Caveat, cursive' }} color="#31588c">
+                    <FormatQuoteIcon color="disabled" fontSize='large' />
+                    {item.text_uk}
+                  </Typography>
+                </Box>
+              )) }
+            </Carousel>
+          </Grid>
+        </Grid>
       </Box>
     </Container>
     </>

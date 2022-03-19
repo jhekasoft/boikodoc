@@ -119,7 +119,7 @@ export default function MyApp(props: MyAppProps) {
                 onKeyDown={toggleDrawer(false)}
               >
                 <List>
-                <ListItem button component={Link} href="/">
+                  <ListItem button component={Link} href="/">
                     <ListItemText primary="Головна" />
                   </ListItem>
                   {menuList.map((item, index) => (

@@ -1,0 +1,74 @@
+[
+    {
+        "url": "mailto:yulia.boiko.doc@gmail.com",
+        "name": "yulia.boiko.doc@gmail.com",
+        "title_uk": "Email",
+        "title_ru": "Email",
+        "icon": "envelope",
+        "isNewTab": false,
+        "isContact": true,
+        "isSocial": false,
+        "isTop": true,
+        "isPhone": false
+    },
+    {
+        "url": "https://m.me/boykodoctor",
+        "name": "@boykodoctor",
+        "title_uk": "Facebook Messenger",
+        "title_ru": "Facebook Messenger",
+        "icon": "facebook-messenger",
+        "isNewTab": true,
+        "isContact": true,
+        "isSocial": false,
+        "isTop": true,
+        "isPhone": false
+    },
+    {
+        "url": "viber://chat?number=%2b380502076704",
+        "name": "+380 50 207 67 04",
+        "title_uk": "Viber",
+        "title_ru": "Viber",
+        "icon": "viber",
+        "isNewTab": true,
+        "isContact": true,
+        "isSocial": false,
+        "isTop": true,
+        "isPhone": false
+    },
+    {
+        "url": "https://telegram.me/yuliadoc",
+        "name": "@yuliadoc",
+        "title_uk": "Telegram",
+        "title_ru": "Telegram",
+        "icon": "telegram",
+        "isNewTab": true,
+        "isContact": true,
+        "isSocial": false,
+        "isTop": true,
+        "isPhone": false
+    },
+    {
+        "url": "tel://%2b380502076704",
+        "name": "+380 50 207 67 04",
+        "title_uk": "Телефон",
+        "title_ru": "Телефон",
+        "icon": "phone",
+        "isNewTab": true,
+        "isContact": true,
+        "isSocial": false,
+        "isTop": false,
+        "isPhone": true
+    },
+    {
+        "url": "https://www.facebook.com/boykodoctor",
+        "name": "boykodoctor",
+        "title_uk": "Facebook",
+        "title_ru": "Facebook",
+        "icon": "facebook",
+        "isNewTab": true,
+        "isContact": false,
+        "isSocial": true,
+        "isTop": false,
+        "isPhone": false
+    }
+]
