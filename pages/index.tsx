@@ -3,7 +3,7 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
-import { Button, Divider, Grid, IconButton, Paper, Rating, Stack } from '@mui/material';
+import { Button, Divider, Grid, IconButton, Modal, Paper, Rating, Stack } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import Link from '../src/Link';
@@ -14,9 +14,7 @@ import Image from 'next/image';
 import { Pagination, Mousewheel, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 
 interface StaticPropsProps {
   timelineItems: TimelineItm[];
@@ -46,6 +44,15 @@ export async function getStaticProps(): Promise<StaticProps> {
 }
 
 export default function Index(props: StaticPropsProps) {
+  const [certificateOpen, setCertificateOpen] = React.useState(false);
+  const [certificateImg, setCertificateImg] = React.useState("");
+  const handleCertificateOpen = (certificateImg: string) => {
+    setCertificateImg(certificateImg);
+    setCertificateOpen(true);
+  }
+  const handleCertificateClose = () => setCertificateOpen(false);
+  
+
   React.useEffect(() => {
     const cover = document.getElementById('main_cover');
     if (cover) {
@@ -168,19 +175,47 @@ export default function Index(props: StaticPropsProps) {
             mousewheel={{ forceToAxis: true }}
           >
             { props.certificates.map((item, i) => (
-              <SwiperSlide key={i} style={{ textAlign: 'center', paddingBottom: '3rem' }}>
-                <Image
-                  loader={({ src }) => src}
-                  src={item.img}
-                  width="190"
-                  height="134"
-                  alt={item.title_uk}
-                />
+              <SwiperSlide key={i} style={{ textAlign: 'center' }}>
+                <Box
+                  onClick={() => {handleCertificateOpen(item.img_full)}}
+                  sx={{
+                    height: 180,
+                    width: 256,
+                    cursor: 'pointer'
+                  }}
+                  title={item.title_uk}
+                >
+                  <Image
+                    loader={({ src }) => src}
+                    src={item.img2x}
+                    layout="fill"
+                    objectFit='contain'
+                    objectPosition='top'
+                    alt={item.title_uk}
+                  />
+                </Box>
               </SwiperSlide>
             )) }
           </Swiper>
         </Grid>
       </Grid>
+
+      <Modal
+        open={certificateOpen}
+        onClose={handleCertificateClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={{ cursor: 'pointer' }} onClick={handleCertificateClose}>
+          <Image
+            loader={({ src }) => src}
+            src={certificateImg}
+            layout="fill"
+            objectFit='contain'
+            objectPosition='top'
+          />
+        </Box>
+      </Modal>
     </Container>
 
     <Divider />
