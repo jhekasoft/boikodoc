@@ -158,7 +158,12 @@ export default function Index(props: StaticPropsProps) {
           <Swiper
             modules={[Pagination, Mousewheel, A11y]}
             spaceBetween={50}
-            slidesPerView={3}
+            slidesPerView={1}
+            breakpoints={{
+              640: {
+                slidesPerView: 3
+              }
+            }}
             pagination={{ clickable: true }}
             mousewheel={{ forceToAxis: true }}
           >
