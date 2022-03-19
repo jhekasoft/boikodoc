@@ -22,6 +22,7 @@ import Copyright from '../src/Copyright';
 import Link from '../src/Link';
 import { Container, useMediaQuery } from '@mui/material';
 import TagManager from 'react-gtm-module';
+import '../src/style.css';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();

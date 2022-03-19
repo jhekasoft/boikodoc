@@ -12,3 +12,16 @@ export interface Review {
   text_ru: string;
   rating: number;
 }
+
+export interface Symptom {
+  title_uk: string;
+  title_ru: string;
+}
+
+export interface Certificate {
+  img: string;
+  img2x: string;
+  img_full: string;
+  title_uk: string;
+  title_ru: string;
+}

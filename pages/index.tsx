@@ -3,18 +3,26 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
-import { Button, Grid, IconButton, Paper, Rating, Stack } from '@mui/material';
+import { Button, Divider, Grid, IconButton, Paper, Rating, Stack } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import Link from '../src/Link';
-import { Review, TimelineItem as TimelineItm } from '../src/api/types';
-import { fetchReviews, fetchTimeline } from '../src/api';
+import { Certificate, Review, Symptom, TimelineItem as TimelineItm } from '../src/api/types';
+import { fetchCertificates, fetchReviews, fetchSymptoms, fetchTimeline } from '../src/api';
 import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from '@mui/lab';
-import Carousel from 'react-material-ui-carousel';
+import Image from 'next/image';
+import { Pagination, Mousewheel, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 interface StaticPropsProps {
   timelineItems: TimelineItm[];
+  certificates: Certificate[];
   reviews: Review[];
+  symptoms: Symptom[]
 }
 
 interface StaticProps {
@@ -23,12 +31,16 @@ interface StaticProps {
 
 export async function getStaticProps(): Promise<StaticProps> {
   const timelineItems = fetchTimeline();
+  const certificates = fetchCertificates();
   const reviews = fetchReviews();
+  const symptoms = fetchSymptoms();
 
   return {
     props: {
       timelineItems,
-      reviews
+      certificates,
+      reviews,
+      symptoms
     },
   }
 }
@@ -38,13 +50,13 @@ export default function Index(props: StaticPropsProps) {
     const cover = document.getElementById('main_cover');
     if (cover) {
       document.addEventListener('scroll', () => {
-          const
-              pageY = window.pageYOffset,
-              scroll = pageY * 0.3,
-              scrolled = scroll.toFixed(0);
-          if (pageY <= document.documentElement.clientHeight && pageY <= 1080) {
-              cover.style.transform = 'translateY(' + (scrolled) + 'px)';
-          }
+        const
+          pageY = window.pageYOffset,
+          scroll = pageY * 0.3,
+          scrolled = scroll.toFixed(0);
+        if (pageY <= document.documentElement.clientHeight && pageY <= 1080) {
+          cover.style.transform = 'translateY(' + (scrolled) + 'px)';
+        }
       });
     }
   }, []);
@@ -134,57 +146,97 @@ export default function Index(props: StaticPropsProps) {
           )) }
         </Timeline>
       </Box>
+    </Container>
 
-      <Box id="reviews">
-        <Typography variant="h4" sx={{ textAlign: 'center' }}>
-          Відгуки
-        </Typography>
-        <Grid container spacing={0} alignItems="center" justifyContent="center">
-          <Grid item xs={12} sm={12} md={9}>
-            <Carousel
-              autoPlay={true}
-              stopAutoPlayOnHover={true}
-              indicators={true}
-              swipe={true}
-              cycleNavigation={true}
-              navButtonsAlwaysVisible={false}
-              fullHeightHover={false}
-              animation="slide"
-              interval={5000}
-              // duration={1000}
-              activeIndicatorIconButtonProps={{
-                style: {
-                  color: "#2baba8"
-                }
-              }}
-            >
-              { props.reviews.map((item, i) => (
-                <Box key={i} sx={{ minHeight: { xs: '19rem', sm: '11rem' } }}>
-                  <Stack
-                    direction="row"
-                    justifyContent="space-between"
-                    alignItems="center"
-                    spacing={2}
-                  >
-                    <Typography variant="h5">{item.name_uk}</Typography>
-                    <Box sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                    }}>
-                      <Rating value={item.rating} precision={0.5} readOnly />
-                      <Box>{item.rating}</Box>
-                    </Box>
-                  </Stack>
-                  <Typography variant="h5" sx={{ fontFamily: 'Caveat, cursive' }} color="#31588c">
-                    <FormatQuoteIcon color="disabled" fontSize='large' />
-                    {item.text_uk}
-                  </Typography>
-                </Box>
-              )) }
-            </Carousel>
-          </Grid>
+    <Divider />
+    <Container id="certificates" sx={{ my: 4 }}>
+      <Typography variant="h4" sx={{ textAlign: 'center', mb: 2 }}>
+        Сертифікати
+      </Typography>
+      <Grid container spacing={0} alignItems="center" justifyContent="center">
+        <Grid item xs={12} sm={12} md={9}>
+          <Swiper
+            modules={[Pagination, Mousewheel, A11y]}
+            spaceBetween={50}
+            slidesPerView={3}
+            pagination={{ clickable: true }}
+            mousewheel={{ forceToAxis: true }}
+          >
+            { props.certificates.map((item, i) => (
+              <SwiperSlide key={i} style={{ textAlign: 'center', paddingBottom: '3rem' }}>
+                <Image
+                  loader={({ src }) => src}
+                  src={item.img}
+                  width="190"
+                  height="134"
+                  alt={item.title_uk}
+                />
+              </SwiperSlide>
+            )) }
+          </Swiper>
         </Grid>
-      </Box>
+      </Grid>
+    </Container>
+
+    <Divider />
+    <Container id="reviews" sx={{ my: 4 }}>
+      <Typography variant="h4" sx={{ textAlign: 'center', mb: 2 }}>
+        Відгуки
+      </Typography>
+      <Grid container spacing={0} alignItems="center" justifyContent="center">
+        <Grid item xs={12} sm={12} md={9}>
+          <Swiper
+            modules={[Pagination, Mousewheel, A11y]}
+            spaceBetween={50}
+            slidesPerView={1}
+            autoHeight={true}
+            pagination={{ clickable: true }}
+            mousewheel={{ forceToAxis: true }}
+          >
+            { props.reviews.map((item, i) => (
+              <SwiperSlide key={i} style={{ paddingBottom: '3rem' }}>
+                <Stack
+                  direction="row"
+                  justifyContent="space-between"
+                  alignItems="center"
+                  spacing={2}
+                >
+                  <Typography variant="h5">{item.name_uk}</Typography>
+                  <Box sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                  }}>
+                    <Rating value={item.rating} precision={0.5} readOnly />
+                    <Box>{item.rating}</Box>
+                  </Box>
+                </Stack>
+                <Typography variant="h5" sx={{ fontFamily: 'Caveat, cursive' }} color="#31588c">
+                  <FormatQuoteIcon color="disabled" fontSize='large' />
+                  {item.text_uk}
+                </Typography>
+              </SwiperSlide>
+            )) }
+          </Swiper>
+        </Grid>
+      </Grid>
+    </Container>
+
+    <Divider />
+    <Container id="symptoms" sx={{ my: 4 }}>
+      <Typography variant="h4" sx={{ textAlign: 'center' }}>
+        Коли потрібен гінеколог
+      </Typography>
+      <Typography variant="h6" sx={{ mt: 4, mb: 4, textAlign: 'center' }}>
+        Ви — жінка, і у Вас:
+      </Typography>
+        <Box sx={{ textAlign: 'center' }}>
+          { props.symptoms.map((item, i, symptoms) => (
+            <Typography variant="h5" sx={{ fontFamily: 'Caveat, cursive', my: 2 }} color="#31588c">
+              {item.title_uk + (i == symptoms.length -1 ? "." : ";")}
+            </Typography>
+          )) }
+        </Box>
+
     </Container>
     </>
   );
