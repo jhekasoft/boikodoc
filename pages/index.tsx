@@ -159,7 +159,7 @@ export default function Index(props: StaticPropsProps) {
               }}
             >
               { props.reviews.map((item, i) => (
-                <Box key={i} sx={{ minHeight: { xs: '17rem', sm: '10rem' } }}>
+                <Box key={i} sx={{ minHeight: { xs: '18rem', sm: '11rem' } }}>
                   <Stack
                     direction="row"
                     justifyContent="space-between"
