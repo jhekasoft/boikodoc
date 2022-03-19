@@ -181,7 +181,7 @@ export default function Index(props: StaticPropsProps) {
                   sx={{
                     height: 180,
                     width: 256,
-                    cursor: 'pointer'
+                    cursor: 'zoom-in',
                   }}
                   title={item.title_uk}
                 >
@@ -212,7 +212,7 @@ export default function Index(props: StaticPropsProps) {
             src={certificateImg}
             layout="fill"
             objectFit='contain'
-            objectPosition='top'
+            objectPosition='center'
           />
         </Box>
       </Modal>
