@@ -72,7 +72,7 @@ export default function MyApp(props: MyAppProps) {
   };
 
   const menuList = [
-    // {title: "Послуги", url: "/services"},
+    {title: "Послуги", url: "/services"},
     {title: "Про лікаря", url: "/about"},
     {title: "Контакти", url: "/contact"}
   ];

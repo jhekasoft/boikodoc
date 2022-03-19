@@ -6,15 +6,15 @@ import Avatar from '@mui/material/Avatar';
 import { Button, Divider, Grid, IconButton, Modal, Paper, Rating, Stack } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
-import Link from '../src/Link';
-import { Certificate, Review, Symptom, TimelineItem as TimelineItm } from '../src/api/types';
-import { fetchCertificates, fetchReviews, fetchSymptoms, fetchTimeline } from '../src/api';
 import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from '@mui/lab';
 import Image from 'next/image';
 import { Pagination, Mousewheel, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import Link from '../src/Link';
+import { Certificate, Review, Symptom, TimelineItem as TimelineItm } from '../src/api/types';
+import { fetchCertificates, fetchReviews, fetchSymptoms, fetchTimeline } from '../src/api';
 
 interface StaticPropsProps {
   timelineItems: TimelineItm[];
@@ -75,7 +75,7 @@ export default function Index(props: StaticPropsProps) {
         <Box sx={{ my: 4, display: 'flex',
               flexDirection: 'column',
               alignItems: 'center' }}>
-          <IconButton component={Link} href="/contact" sx={{ mb: 4 }}>
+          <IconButton component={Link} href="/about" sx={{ mb: 4 }}>
             <Avatar
               alt="Юлія Бойко"
               src="/cover.jpg"

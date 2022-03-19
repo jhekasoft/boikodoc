@@ -25,3 +25,17 @@ export interface Certificate {
   title_uk: string;
   title_ru: string;
 }
+
+export interface Service {
+  id: number;
+  slug: string;
+  title_uk: string;
+  title_ru: string;
+  desc_uk: string;
+  desc_ru: string;
+  img: string;
+  img2x: string;
+  img_full: string;
+  keywords_uk: string;
+  keywords_ru: string;
+}
