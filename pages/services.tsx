@@ -7,6 +7,7 @@ import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid
 import Image from 'next/image';
 import { Service } from '../src/api/types';
 import { fetchServices } from '../src/api';
+import ServiceItem from '../src/component/service/ServiceItem';
 
 interface StaticPropsProps {
   services: Service[]
@@ -56,26 +57,7 @@ export default function Services(props: StaticPropsProps) {
         <Grid container spacing={4}>
           { props.services.map((item, i) => (
             <Grid item key={i} xs={12} sm={6} md={4}>
-              <Card
-                sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-              >
-                <CardActionArea href="">
-                  <CardMedia title={item.title_uk}>
-                    <Image
-                      loader={({ src }) => src}
-                      src={item.img2x}
-                      width="736"
-                      height="428"
-                      alt={item.title_uk}
-                    />
-                  </CardMedia>
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography variant="h6" component="h3">
-                      {item.title_uk}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
+              <ServiceItem item={item} />
             </Grid>
           )) }
         </Grid>

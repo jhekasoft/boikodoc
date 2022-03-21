@@ -31,11 +31,13 @@ export interface Service {
   slug: string;
   title_uk: string;
   title_ru: string;
-  desc_uk: string;
-  desc_ru: string;
+  desc_uk: string[];
+  desc_ru: string[];
   img: string;
   img2x: string;
   img_full: string;
   keywords_uk: string;
   keywords_ru: string;
+  saleText_uk: string;
+  saleText_ru: string;
 }

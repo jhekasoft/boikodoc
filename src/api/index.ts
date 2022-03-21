@@ -30,3 +30,8 @@ export function fetchServices(): Service[] {
   const data: Service[] = JSON.parse(rawData.toString('utf-8'));
   return data;
 }
+
+export function fetchService(id: number): Service | undefined {
+  const items = fetchServices();
+  return items.find(item => item.id == id)
+}

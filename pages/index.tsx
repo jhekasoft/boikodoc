@@ -3,7 +3,7 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
-import { Button, Divider, Grid, IconButton, Modal, Paper, Rating, Stack } from '@mui/material';
+import { Alert, Button, Divider, Grid, IconButton, Modal, Paper, Rating, Stack } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import { Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineOppositeContent, TimelineSeparator } from '@mui/lab';
@@ -13,14 +13,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import Link from '../src/Link';
-import { Certificate, Review, Symptom, TimelineItem as TimelineItm } from '../src/api/types';
-import { fetchCertificates, fetchReviews, fetchSymptoms, fetchTimeline } from '../src/api';
+import { Certificate, Review, Service, Symptom, TimelineItem as TimelineItm } from '../src/api/types';
+import { fetchCertificates, fetchReviews, fetchService, fetchSymptoms, fetchTimeline } from '../src/api';
+import ServiceItem from '../src/component/service/ServiceItem';
 
 interface StaticPropsProps {
   timelineItems: TimelineItm[];
   certificates: Certificate[];
   reviews: Review[];
-  symptoms: Symptom[]
+  symptoms: Symptom[];
+  mainService?: Service;
 }
 
 interface StaticProps {
@@ -32,13 +34,15 @@ export async function getStaticProps(): Promise<StaticProps> {
   const certificates = fetchCertificates();
   const reviews = fetchReviews();
   const symptoms = fetchSymptoms();
+  const mainService = fetchService(3);
 
   return {
     props: {
       timelineItems,
       certificates,
       reviews,
-      symptoms
+      symptoms,
+      mainService
     },
   }
 }
@@ -278,6 +282,23 @@ export default function Index(props: StaticPropsProps) {
         </Box>
 
     </Container>
+
+    { props.mainService && (
+      <>
+        <Divider />
+        <Container id="symptoms" sx={{ my: 4 }}>
+          <Typography variant="h4" sx={{ textAlign: 'center', mb: 4 }}>
+            Безкоштовна консультація на час воєнного стану
+          </Typography>
+
+          <Grid container spacing={0} alignItems="center" justifyContent="center">
+            <Grid item xs={12} sm={6} md={4}>
+              <ServiceItem item={props.mainService} />
+            </Grid>
+          </Grid>
+        </Container>
+      </>
+    ) }
     </>
   );
 }
