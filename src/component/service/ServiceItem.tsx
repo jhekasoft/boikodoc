@@ -1,6 +1,7 @@
 import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
 import Image from 'next/image';
 import { Service } from '../../api/types';
+import Link from '../../Link';
 
 interface Props {
   item: Service
@@ -14,6 +15,7 @@ export default function ServiceItem(props: Props) {
       sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
     >
       <CardActionArea
+        LinkComponent={Link}
         href={`/services/${item.id}/${item.slug}`}
         sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', alignItems: 'start' }}
       >
