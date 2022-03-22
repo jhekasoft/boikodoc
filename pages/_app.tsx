@@ -78,7 +78,7 @@ export default function MyApp(props: MyAppProps) {
   ];
 
   React.useEffect(() => {
-    if (process.env.GoogleTagId) {
+    if (process.env.googleTagId) {
       TagManager.initialize({ gtmId: process.env.googleTagId || '' });
     }
   }, []);
