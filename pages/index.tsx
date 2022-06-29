@@ -16,6 +16,7 @@ import Link from '../src/Link';
 import { Certificate, Review, Service, Symptom, TimelineItem as TimelineItm } from '../src/api/types';
 import { fetchCertificates, fetchReviews, fetchService, fetchSymptoms, fetchTimeline } from '../src/api';
 import ServiceItem from '../src/component/service/ServiceItem';
+import Head from 'next/head';
 
 interface StaticPropsProps {
   timelineItems: TimelineItm[];
@@ -74,6 +75,25 @@ export default function Index(props: StaticPropsProps) {
 
   return (
     <>
+    <Head>
+      {/* TODO: make JSON object */}
+      <script type='application/ld+json' dangerouslySetInnerHTML={ { __html: `{
+        "@context": "http://schema.org/",
+        "@type": "Physician",
+        "name": "Бойко Юлія Миколаївна — лікар акушер-гінеколог, лікар УЗД (Київ)",
+        "image": [
+          "${process.env.baseUrl}/static/img/profile2x.jpg"
+        ],
+        "url":"${process.env.baseUrl}",
+        "telephone": "+380502076704",
+        "description": "Бойко Юлія Миколаївна — лікар акушер-гінеколог, лікар УЗД (Київ). Більше 10 років досвіду.",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "reviewCount": "3"
+        }
+      }`}} />
+    </Head>
     <section style={{ top: '-48px', height: '100vh', width: '100%', position: 'relative', minHeight: 670, overflow: 'hidden' }}>
       <Container sx={{ position: 'absolute', pt: '48px', left: 0, right: 0, zIndex: 1, top: '50%', transform: 'translate(0,-50%)' }}>
         <Box sx={{ my: 4, display: 'flex',
@@ -108,7 +128,7 @@ export default function Index(props: StaticPropsProps) {
         </Box>
       </Container>
       <div id="main_cover" style={{ bottom: 0, margin: 'auto', top: 0, position: 'absolute', left: 0, right: 0, willChange: 'transform', background: 'url(/static/img/about_bg6.jpg) no-repeat top center', backgroundSize: 'cover' }}>
-    </div>
+      </div>
     </section>
 
     <Container>
@@ -191,6 +211,7 @@ export default function Index(props: StaticPropsProps) {
                 >
                   <Image
                     loader={({ src }) => src}
+                    unoptimized
                     src={item.img2x}
                     layout="fill"
                     objectFit='contain'
@@ -275,7 +296,7 @@ export default function Index(props: StaticPropsProps) {
       </Typography>
         <Box sx={{ textAlign: 'center' }}>
           { props.symptoms.map((item, i, symptoms) => (
-            <Typography variant="h5" sx={{ fontFamily: 'Caveat, cursive', my: 2 }} color="#31588c">
+            <Typography key={i} variant="h5" sx={{ fontFamily: 'Caveat, cursive', my: 2 }} color="#31588c">
               {item.title_uk + (i == symptoms.length -1 ? "." : ";")}
             </Typography>
           )) }

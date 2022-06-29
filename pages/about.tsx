@@ -2,14 +2,8 @@ import * as React from 'react';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 import Head from 'next/head';
-import EmailIcon from '@mui/icons-material/Email';
-import PhoneIcon from '@mui/icons-material/Phone';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import { Avatar, Grid, SvgIcon } from '@mui/material';
-import { FacebookMessengerIcon, TelegramIcon, ViberIcon } from '../src/icon';
+import { Avatar, Grid } from '@mui/material';
 
 export default function About() {
   const title = `Про лікаря | ${process.env.baseTitle}`;
@@ -70,7 +64,7 @@ export default function About() {
           <li>2018 р. — практичний курс «Репродуктивна ендокринологія»;</li>
           <li>2020 р. — курси ТУ «Ендокринологія в гінекології»;</li>
           <li>2020 р. — отримала 2-гу кваліфікаційну категорію з УЗД;</li>
-          <li>2021 р. — курси ТУ «УЗД в акушерстві та генекології»;</li>
+          <li>2021 р. — курси ТУ «УЗД в акушерстві та гінекології»;</li>
           <li>2021 р. — отримала 1-шу кваліфікаційну категорію з акушерства та гінекології.</li>
         </ul>
 

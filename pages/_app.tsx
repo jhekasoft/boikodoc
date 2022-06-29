@@ -4,7 +4,6 @@ import { AppProps } from 'next/app';
 import { ThemeProvider, Theme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import Typography from '@mui/material/Typography';
 import Drawer from '@mui/material/Drawer';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -89,12 +88,12 @@ export default function MyApp(props: MyAppProps) {
         <title>{process.env.baseTitle}</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         <meta property="og:title" content={process.env.baseTitle} key="title" />
-        <meta property="og:description" content="👩‍⚕️ Бойко Юлія Миколаївна — лікар акушер-гінеколог, лікар УЗД, Київ. 📞 +380 50 207 67 04. Онлайн-запис на консультацію в Києві. Відгуки. Сертифікати. Коли потрібен гінеколог. Нерегулярний менструальний цикл, виделення із піхви, неприємний запах, вагітність." />
+        <meta property="og:description" content="👩‍⚕️ Бойко Юлія Миколаївна — ♀️ лікар акушер-гінеколог, лікар УЗД, Київ. 📞 +380 50 207 67 04. Онлайн-запис на консультацію в Києві. Відгуки. Сертифікати. Коли потрібен гінеколог. Нерегулярний менструальний цикл, виділення із піхви, неприємний запах, вагітність." />
         <meta name="keywords" content="лікар, гінеколог, акушер-гінеколог, лікар акушер-гінеколог, лікар УЗД, УЗД, гінеколог Київ, УЗД Київ, нерегулярний менструальний цикл, сертифікати гінеколог, вагітність, гінеколог вагітність, акушер-гінеколог вагітність, консультація онлайн гінеколог, консультація гінеколог Київ, піхва неприємний запах" />
-        <meta property="og:url" content="https://boikodoc.com/" />
+        <meta property="og:url" content={process.env.baseUrl + "/"} />
         <meta property="og:site_name" content={process.env.baseTitle} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://boikodoc.com/cover.jpg" />
+        <meta property="og:image" content={process.env.baseUrl + "/cover.jpg"} />
       </Head>
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={getTheme(state.themeMode)}>

@@ -22,6 +22,7 @@ export default function ServiceItem(props: Props) {
         <CardMedia title={item.title_uk}>
           <Image
             loader={({ src }) => src}
+            unoptimized
             src={item.img2x}
             width="736"
             height="428"

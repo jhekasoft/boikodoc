@@ -3,9 +3,8 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Head from 'next/head';
-import { Alert, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid } from '@mui/material';
+import { Alert, Grid } from '@mui/material';
 import Image from 'next/image';
-import { useRouter } from 'next/router'
 import { Service } from '../../../src/api/types';
 import { fetchService, fetchServices } from '../../../src/api';
 import Contact from '../../../src/component/contact/Contact';
