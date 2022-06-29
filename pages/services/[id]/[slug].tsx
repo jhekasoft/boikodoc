@@ -77,7 +77,7 @@ export default function Services(props: StaticPropsProps) {
           <Typography color="text.primary">{ props.service.title_uk }</Typography>
         </Breadcrumbs> */}
 
-        <Link href="/services" underline="hover">🠔 Всі послуги</Link>
+        <Link href="/services" underline="hover">← Всі послуги</Link>
         <Typography variant="h4" component="h1" gutterBottom>
           { props.service.title_uk }
         </Typography>
@@ -85,8 +85,8 @@ export default function Services(props: StaticPropsProps) {
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6} md={6}>
             
-            {props.service.desc_uk.map(descItem => (
-              <Typography sx={{ mb: 2 }}>{descItem}</Typography>
+            {props.service.desc_uk.map((descItem, i) => (
+              <Typography key={i} sx={{ mb: 2 }}>{descItem}</Typography>
             ))}
 
             {props.service.saleText_uk && (
