@@ -88,6 +88,7 @@ export default function Services(props: StaticPropsProps) {
           <Grid item xs={12} sm={6} md={6}>
             <Image
               loader={({ src }) => src}
+              unoptimized
               src={props.service.img_full}
               width="736"
               height="428"

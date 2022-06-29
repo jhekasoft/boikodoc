@@ -241,6 +241,7 @@ export default function Index(props: StaticPropsProps) {
         <Box sx={{ cursor: 'pointer' }} onClick={handleCertificateClose}>
           <Image
             loader={({ src }) => src}
+            unoptimized
             src={certificateImg}
             layout="fill"
             objectFit='contain'
