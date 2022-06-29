@@ -80,13 +80,20 @@ export default function Index(props: StaticPropsProps) {
       <script type='application/ld+json' dangerouslySetInnerHTML={ { __html: `{
         "@context": "http://schema.org/",
         "@type": "Physician",
-        "name": "Бойко Юлія Миколаївна — лікар акушер-гінеколог, лікар УЗД (Київ)",
+        "name": "Бойко Юлія Миколаївна",
         "image": [
           "${process.env.baseUrl}/static/img/profile2x.jpg"
         ],
         "url":"${process.env.baseUrl}",
         "telephone": "+380502076704",
         "description": "Бойко Юлія Миколаївна — лікар акушер-гінеколог, лікар УЗД (Київ). Більше 10 років досвіду.",
+        "priceRange":"500₴",
+        "makesOffer": {
+          "@type": "Offer",
+          "name": "Консультація лікаря",
+          "price": "500",
+          "priceCurrency": "UAH"
+        },
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "4.8",
