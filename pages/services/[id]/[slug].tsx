@@ -3,11 +3,12 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Head from 'next/head';
-import { Alert, Grid } from '@mui/material';
+import { Alert, Breadcrumbs, Grid, Stack } from '@mui/material';
 import Image from 'next/image';
 import { Service } from '../../../src/api/types';
 import { fetchService, fetchServices } from '../../../src/api';
 import Contact from '../../../src/component/contact/Contact';
+import Link from '../../../src/Link';
 
 interface StaticPropsProps {
   service?: Service
@@ -64,6 +65,19 @@ export default function Services(props: StaticPropsProps) {
     </Head>
     <Container>
       <Box sx={{ my: 4 }}>
+
+        {/* <Breadcrumbs aria-label="breadcrumb">
+          <Link
+            underline="hover"
+            color="inherit"
+            href="/services"
+          >
+            Послуги
+          </Link>
+          <Typography color="text.primary">{ props.service.title_uk }</Typography>
+        </Breadcrumbs> */}
+
+        <Link href="/services" underline="hover">🠔 Всі послуги</Link>
         <Typography variant="h4" component="h1" gutterBottom>
           { props.service.title_uk }
         </Typography>
