@@ -19,7 +19,7 @@ import { lightTheme, darkTheme } from '../src/theme';
 import createEmotionCache from '../src/createEmotionCache';
 import Copyright from '../src/Copyright';
 import Link from '../src/Link';
-import { Container, useMediaQuery } from '@mui/material';
+import { Container, Typography, useMediaQuery } from '@mui/material';
 import TagManager from 'react-gtm-module';
 import '../src/style.css';
 
@@ -76,6 +76,11 @@ export default function MyApp(props: MyAppProps) {
     {title: "Контакти", url: "/contact"}
   ];
 
+  const fullMenuList = [
+    {title: "Головна", url: "/"},
+    ...menuList,
+  ]
+
   React.useEffect(() => {
     if (process.env.googleTagId) {
       TagManager.initialize({ gtmId: process.env.googleTagId || '' });
@@ -119,10 +124,7 @@ export default function MyApp(props: MyAppProps) {
                 onKeyDown={toggleDrawer(false)}
               >
                 <List>
-                  <ListItem button component={Link} href="/">
-                    <ListItemText primary="Головна" />
-                  </ListItem>
-                  {menuList.map((item, index) => (
+                  {fullMenuList.map((item, index) => (
                     <ListItem key={'drawer-menu-' + index} button component={Link} href={item.url}>
                       <ListItemText primary={item.title} />
                     </ListItem>
@@ -189,6 +191,13 @@ export default function MyApp(props: MyAppProps) {
               }}
               textAlign="center"
             >
+              <Box sx={{ mb: 2 }}>
+                {fullMenuList.map((item, index) => (
+                  <Link key={'footer-link-' + index} href={item.url} sx={{ mx: 1 }} underline="none">
+                    <Typography variant="body2" color="text.disabled" component="span">{item.title}</Typography>
+                  </Link>
+                ))}
+              </Box>
               <Copyright />
             </Box>
             <Box sx={{ backgroundColor: 'primary.light', height: "0.3rem" }}></Box>
