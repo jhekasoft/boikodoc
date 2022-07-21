@@ -71,6 +71,7 @@ export default function MyApp(props: MyAppProps) {
   };
 
   const menuList = [
+    {title: "Безкоштовна консультація", url: "/services/3/online-gynecology-consult", type: "highlight"},
     {title: "Послуги", url: "/services"},
     {title: "Про лікаря", url: "/about"},
     {title: "Контакти", url: "/contact"}
@@ -79,7 +80,7 @@ export default function MyApp(props: MyAppProps) {
   const fullMenuList = [
     {title: "Головна", url: "/"},
     ...menuList,
-  ]
+  ];
 
   React.useEffect(() => {
     if (process.env.googleTagId) {
@@ -172,7 +173,8 @@ export default function MyApp(props: MyAppProps) {
                         component={Link}
                         href={item.url}
                         color="primary"
-                        sx={{ color: "inherit", ":hover": { color: "primary.main" } }}
+                        variant={(item.type == 'highlight') ? 'contained' : 'text'}
+                        sx={item.type == 'highlight' ? {} : { color: "inherit", ":hover": { color: "primary.main" } }}
                       >
                         {item.title}
                       </Button>
