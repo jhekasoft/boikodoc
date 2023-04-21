@@ -133,8 +133,14 @@ export default function MyApp(props: MyAppProps) {
                 </List>
               </Box>
             </Drawer>
-            <Box sx={{ backgroundColor: 'primary.light', height: "0.3rem" }}></Box>
-            <AppBar position="static" color="transparent" elevation={0} enableColorOnDark sx={{ zIndex: 20 }}>
+            <Toolbar variant="dense" disableGutters sx={{ marginBottom: "0.3rem" }}></Toolbar> {/* For AppBar margin */}
+            <AppBar
+              color="transparent"
+              elevation={0}
+              enableColorOnDark 
+              sx={{ zIndex: 20, backdropFilter:"blur(8px)" }}
+            >
+              <Box sx={{ backgroundColor: 'primary.light', height: "0.3rem" }}></Box>
               <Container>
                 <Toolbar variant="dense" disableGutters>
                 {/* <Stack direction="row" spacing={0} sx={{ mt: 1, mb: 1 }}> */}
