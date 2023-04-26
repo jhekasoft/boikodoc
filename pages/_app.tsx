@@ -19,7 +19,7 @@ import { lightTheme, darkTheme } from '../src/theme';
 import createEmotionCache from '../src/createEmotionCache';
 import Copyright from '../src/Copyright';
 import Link from '../src/Link';
-import { Container, Typography, useMediaQuery } from '@mui/material';
+import { Container, ListItemButton, Typography, useMediaQuery } from '@mui/material';
 import TagManager from 'react-gtm-module';
 import '../src/style.css';
 
@@ -70,8 +70,14 @@ export default function MyApp(props: MyAppProps) {
     setState({ ...state, open: open });
   };
 
-  const menuList = [
-    {title: "Безкоштовна консультація", url: "/services/3/online-gynecology-consult", type: "highlight"},
+  type MenuItem = {
+    title: string;
+    url: string;
+    type?: string;
+  }
+
+  const menuList: MenuItem[] = [
+    // {title: "Безкоштовна консультація", url: "/services/3/online-gynecology-consult", type: "highlight"},
     {title: "Послуги", url: "/services"},
     {title: "Про лікаря", url: "/about"},
     {title: "Контакти", url: "/contact"}
@@ -126,9 +132,9 @@ export default function MyApp(props: MyAppProps) {
               >
                 <List>
                   {fullMenuList.map((item, index) => (
-                    <ListItem key={'drawer-menu-' + index} button component={Link} href={item.url}>
+                    <ListItemButton key={'drawer-menu-' + index} component={Link} href={item.url}>
                       <ListItemText primary={item.title} />
-                    </ListItem>
+                    </ListItemButton>
                   ))}
                 </List>
               </Box>
@@ -138,7 +144,7 @@ export default function MyApp(props: MyAppProps) {
               color="transparent"
               elevation={0}
               enableColorOnDark 
-              sx={{ zIndex: 20, backdropFilter:"blur(8px)" }}
+              sx={{ zIndex: 20, backdropFilter:"blur(8px)", backgroundColor: "rgba(255, 255, 255, 0.3)" }}
             >
               <Box sx={{ backgroundColor: 'primary.light', height: "0.3rem" }}></Box>
               <Container>
@@ -167,8 +173,11 @@ export default function MyApp(props: MyAppProps) {
                     </Typography>
                   </Box> */}
                   <Box sx={{ flexGrow: 1 }} textAlign="center">
-                    <Button component={Link} href="tel://+380502076704" color="primary">
+                    {/* <Button component={Link} href="tel://+380502076704" color="primary">
                       +380 50 207 67 04
+                    </Button> */}
+                    <Button component={Link} href="/services/3/online-gynecology-consult" color="primary">
+                      👩‍⚕️ Безкоштовна консультація
                     </Button>
                   </Box>
                   {/* <Box sx={{ flexGrow: 1 }} /> */}
