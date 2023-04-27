@@ -5,7 +5,10 @@ import { grey, red, teal } from '@mui/material/colors';
 const lightTheme = createTheme({
   typography: {
     fontFamily: `"Source Sans Pro", "Roboto", "Helvetica", "Arial", sans-serif`,
-    fontSize: 16
+    fontSize: 16,
+    button: {
+      textTransform: 'none'
+    },
   },
   palette: {
     primary: {
@@ -27,6 +30,13 @@ const lightTheme = createTheme({
 });
 
 const darkTheme = createTheme({
+  typography: {
+    fontFamily: `"Source Sans Pro", "Roboto", "Helvetica", "Arial", sans-serif`,
+    fontSize: 16,
+    button: {
+      textTransform: 'none'
+    },
+  },
   palette: {
     mode: 'dark',
     primary: {
