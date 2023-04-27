@@ -3,7 +3,8 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Head from 'next/head';
-import { Avatar, Grid } from '@mui/material';
+import { Avatar, Button, Grid } from '@mui/material';
+import Link from '../src/Link';
 
 export default function About() {
   const title = `Про лікаря | ${process.env.baseTitle}`;
@@ -108,6 +109,10 @@ export default function About() {
           <li>ведення вагітних, пологів, кесарський розтин;</li>
           <li>УЗД органів малого тазу та скринінги вагітних.</li>
         </ul>
+
+        <Button component={Link} href="/services" color="primary">
+          Переглянути послуги
+        </Button>
       </Box>
     </Container>
     </>
