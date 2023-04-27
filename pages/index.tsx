@@ -97,7 +97,7 @@ export default function Index(props: StaticPropsProps) {
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "4.8",
-          "reviewCount": "3"
+          "reviewCount": "5"
         }
       }`}} />
     </Head>
