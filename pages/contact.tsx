@@ -16,7 +16,9 @@ export default function About() {
     <>
     <Head>
       <title>{title}</title>
-      <meta property="og:title" content={title} key="title" />
+      <meta property="og:title" key="title" content={title} />
+      <meta property="og:description" key="description" content="👩‍⚕️ Бойко Юлія Миколаївна — ♀️ лікар акушер-гінеколог, лікар УЗД, Київ. 📞 +380 50 207 67 04. Контакти: Telegram, Viber, Facebook Messenger, Email, телефон" />
+      <meta name="keywords" key="keywords" content="Бойко Юлія Миколаївна, акушер-гінеколог, лікар УЗД, контакти, Telegram, Viber, Facebook Messenger, Email, телефон" />
     </Head>
     <Container>
       <Box sx={{ my: 4 }}>

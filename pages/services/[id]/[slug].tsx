@@ -62,6 +62,9 @@ export default function Services(props: StaticPropsProps) {
     <Head>
       <title>{title}</title>
       <meta property="og:title" content={title} key="title" />
+      <meta property="og:description" key="description" content={props.service.desc_uk[0]} />
+      <meta name="keywords" key="keywords" content={props.service.keywords_uk} />
+      <meta property="og:image" content={process.env.baseUrl + props.service.img_full} />
     </Head>
     <Container>
       <Box sx={{ my: 4 }}>
