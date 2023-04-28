@@ -107,6 +107,7 @@ export default function MyApp(props: MyAppProps) {
         <meta property="og:site_name" content={process.env.baseTitle} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={process.env.baseUrl + "/static/img/profile2x.jpg"} />
+        <meta property="og:locale" content="uk_UA" />
       </Head>
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={getTheme(state.themeMode)}>
